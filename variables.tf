@@ -26,13 +26,13 @@ variable "disable_importing_default_any_approver_rule_on_create" {
 }
 
 variable "group_ids" {
-  type        = list(number)
+  type        = set(number)
   default     = []
   description = "A list of group IDs whose members can approve of the merge request"
 }
 
 variable "protected_branch_ids" {
-  type        = list(number)
+  type        = set(number)
   default     = []
   description = "A list of protected branch IDs (not branch names) for which the rule applies"
 }
@@ -63,7 +63,7 @@ variable "rule_type" {
 }
 
 variable "user_ids" {
-  type        = list(number)
+  type        = set(number)
   default     = []
   description = "A list of specific User IDs to add to the list of approvers"
 }
